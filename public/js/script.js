@@ -36,7 +36,9 @@ socket.on("recieve-location", (data)=>{
     else{
         markers[id] = L.marker([latitude,longitude], {icon: Bus}).addTo(map);
     }
-})
+});   
+
+var marker = L.marker([12.838353, 77.664769]).addTo(map); // SST coord => 12.838353,77.664769
 
 socket.on("user-disconnected", (id)=>{
     if (markers[id]){
